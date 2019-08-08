@@ -29,6 +29,7 @@ def it_sentences(sentence_data):
         example = json.loads(line)
         yield example['sentence2']
 
+
 def it_labels(label_data):
     label_data_reader = csv.DictReader(label_data)
     for example in label_data_reader:
