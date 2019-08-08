@@ -3,6 +3,7 @@ import argparse
 import json
 import csv
 
+
 def main():
     ap = argparse.ArgumentParser()
     ap.add_argument('sentences')
