@@ -1,0 +1,35 @@
+\section{Introducci\'on}\label{sec:introducc'on}
+El presente informe intentaremos reproducir el resultado obtenido por Suchin Gururangan F, Swabha Swayamdipta et al,
+en el cual observan que en datasets generados para experimentos de NLP, en los cuales se analiza la relación entre
+pares de oraciones, los pares generados, contienen artefactos que son el producto de estrategias utilizadas por
+las personas que generaron los datos, con los cuales es posible establecer la relación entre las oraciones sin
+observar una de ellas.
+
+\section{Modelo Implementado}\label{sec:modelo-implementado}
+El modelo que utilazaremos será una LSTM con un estado oculto de tamaño 100, donde las palabras se
+ingresarán convertidas en embedding de tamaño 300.
+
+Los embeddings usados provienen de un modelo  pre-entrenado  usando a wikipedia como corpus.
+
+A la salida correspondiente a la ultima palabra de oración, conectaremos una capa lineal con
+salida tamaño 3, a la cual se le aplicará una softmax, cuya salida será usada para predecir la
+relación entre las palabras
+
+
+\section{Resultado}\label{sec:resultado}
+
+Para obtener los resultados, iteramos tres veces sobre el dataset de entrenamiento.
+
+La evolución de la función de costo se puede observar en el siguiente gráfico.
+
+\begin{figure}[hbtp]
+  \centering
+  \includegraphics[scale=.6]{../data/losses.png}
+\end{figure}
+
+
+Luego evaluamos la precisión sobre el conjunto de validación y obtuvimos un resultado del 60\%
+
+
+\section{Implementación}
+Los código de la implementación se pueden encontrar en \url{https://github.com/aumfurer/eci2019nlp}

@@ -1,0 +1,50 @@
+\documentclass[a4paper]{article}
+
+\usepackage[paper=a4paper, left=1.5cm, right=1.5cm, bottom=1.5cm, top=3.5cm]{geometry}
+%\usepackage[spanish,activeacute]{babel}
+%\usepackage[latin1]{inputenc}
+\usepackage[spanish, activeacute]{babel} %Definir idioma español
+\usepackage[utf8]{inputenc} %Codificacion utf-8
+\usepackage[T1]{fontenc}
+\usepackage{xspace}
+\usepackage{xargs}
+\usepackage{ifthen}
+\usepackage{amsfonts}
+\usepackage{amssymb}
+\usepackage{amsmath}
+\usepackage{amsthm}
+\usepackage{graphicx} %Para incluir el logo de la UBA
+\usepackage{caratula} %Para armar el cuadro de integrantes
+\usepackage{alltt}
+\usepackage{hyperref}
+\usepackage[style=numeric]{biblatex}
+
+%\topmargin = -1cm
+%\textheight = 24cm 
+
+\newtheorem{theorem}{Teorema}
+\newtheorem{lemma}[theorem]{Lema}
+\newtheorem{deffinition}[theorem]{Definición} 
+
+\begin{document}
+
+\input{caratula.tex}
+
+\newpage
+\thispagestyle{empty}
+\tableofcontents
+
+\parskip=5pt
+\setlength{\parindent}{0pt}
+
+\newpage
+\setcounter{page}{1}
+\pagenumbering{arabic}
+\pagestyle{plain}
+
+\input{mdl.tex}
+
+%\newpage
+%\printbibliography
+
+\end{document}
